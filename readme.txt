@@ -26,10 +26,11 @@ ListofVertex=graph_server:make_graph().  %%initialize some graph
 {Source,[]}=graph_server:getvertex(N,ListofVertex).  %%where N is the vertex num
 {Dest,[]}=graph_server:getvertex(N,ListofVertex).    %%where N is the vertex num
 vertex_server:add(Vertex).
-graph_server:traverse(Source,Dest).
 V1=graph_server:addvertex().
 V2=graph_server:addvertex().
 graph_server:createedge(V1,V2,2).
+graph_server:traverse(Source,Dest).
+
 
 Each vertex also spawns it's own process.THere is a functionality for forwarding  a message from one
 vertex process to another i.e from source vertex to destination vertex on the shortest path
